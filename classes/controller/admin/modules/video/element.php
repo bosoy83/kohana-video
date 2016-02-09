@@ -109,7 +109,7 @@ class Controller_Admin_Modules_Video_Element extends Controller_Admin_Modules_Vi
 				$values = $request->post();
 				
 				$values['public_date'] = $this->value_multiple_date($values, 'public_date');
-				if (empty($values['uri']) OR row_exist($orm, 'uri', $values['uri'])) {
+				if (empty($values['uri'])) {
 					$values['uri'] = transliterate_unique($values['title'], $orm, 'uri');
 				}
 				
